@@ -1,23 +1,23 @@
-import { Component } from "react";
-
-import s from "./Form.module.css";
+import { Component } from 'react';
+import PropTypes from 'prop-types';
+import s from './Form.module.css';
 
 class Form extends Component {
   state = {
-    name: "",
-    number: "",
+    name: '',
+    number: '',
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
     this.props.onSubmit({ ...this.state });
     this.setState({
-      name: "",
-      number: "",
+      name: '',
+      number: '',
     });
   };
 
-  handleChange = (e) => {
+  handleChange = e => {
     const { name, value } = e.currentTarget;
 
     this.setState({
